@@ -25,7 +25,7 @@ for i = 1:length(unique_gid1)
     dia = round(sqrt(numElement1(i,2)));
     cgid_list = unique_gid2_1(coord_dist <= 2.5*dia,:);
     coord_dist(coord_dist > 2.5*dia) = [];
-    misori_list = zeros(length(cgid_list),1);
+    misori_list = zeros(size(cgid_list,2),1);
     n = 0;
     for j = cgid_list(:,1)'
         n = n + 1;
