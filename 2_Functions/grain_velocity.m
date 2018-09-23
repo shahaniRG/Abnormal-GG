@@ -13,8 +13,8 @@ function [gid_match,numNeighbor1,numNeighbor2] = grain_velocity(gid_map1,gid_map
 cs = crystalSymmetry('cubic');
 gid_match = zeros(length(unique_gid1),3);
 gid_match(:,1) = unique_gid1;
-c1 = 0.8;
-c2 = 0.2;
+c1 = 0.6;
+c2 = 0.4;
 dt = dt*60;
 unique_gid2_1 = [[1:length(unique_gid2)]', unique_gid2];
 
