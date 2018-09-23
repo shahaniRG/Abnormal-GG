@@ -1,1 +1,2 @@
-# abnormal-grain-growth
+# This repository is separated with 3 folders:
+#
