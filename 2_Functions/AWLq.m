@@ -2,7 +2,7 @@ function [qn,gidfinal,gid_back] = AWLq(adj,gid,numNeighbor,AWL_i,gidfinal,gid_ba
 %Obtains the total number of shell grains for the jth shell
 %Input: adjacency matrix (adj), center grain or shell grain id (gid),
 %       number of Neighbors list for each grain (numNeighbor),
-%       the jth shell (AWL_i), and put empty for the last ([])
+%       the jth shell (AWL_i), and put empty for the last two ([])
     if AWL_i < 1
         error('AWL_i must be equal to or greater than 1')
     elseif AWL_i == 1 && isempty(gid_back)
