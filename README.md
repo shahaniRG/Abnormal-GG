@@ -1,7 +1,7 @@
 # Abnormal-GG deals with data processing of raw data from ACT/DCT scans from the Zeiss Xradia Versa 520 3D X-ray Microscopy abnormal grain growth experiments
 # MTEX is a required Dependency for the code
     download and initialize MTEX (https://mtex-toolbox.github.io, once downloaded type startup_mtex)
-# It is organized by 4 folders: 1) Input (Examples) 2) Functions, 3) Programs 4) Misc (Work in Progress)
+# It is organized by 4 folders: 1) Input [Examples] 2) Functions, 3) Programs 4) Misc [Work in Progress]
   # 1) Input (Examples)
     Example_1 =>
   # 2) Functions
