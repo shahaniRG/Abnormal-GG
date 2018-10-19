@@ -2,7 +2,7 @@
 
 %Data Source
     %Read in Grain Id Map, Rod Vector, Voxel Size, and Completeness
-        gid_map = h5read('UMich_AlCu_GG.h5','/LabDCT/Data/GrainId');
+        gid_map = h5read('Example_1.h5','/LabDCT/Data/GrainId');
     %Voxel Size Minimum
         grain_size_mini = 10;
 %(0) Preface

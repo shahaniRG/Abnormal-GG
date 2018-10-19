@@ -1,9 +1,13 @@
-gid_map1 = h5read('UMich_AlCu_GG.h5','/LabDCT/Data/GrainId');
-gid_map2 = h5read('UMich_AlCu_GG_1.h5','/LabDCT/Data/GrainId');
-gid_map3 = h5read('UMich_AlCu_GG3.h5','/LabDCT/Data/GrainId');
-voxel_size1 = h5read('UMich_AlCu_GG.h5','/LabDCT/Spacing').*1000;
-voxel_size2 = h5read('UMich_AlCu_GG_1.h5','/LabDCT/Spacing').*1000;
-voxel_size3 = h5read('UMich_AlCu_GG3.h5','/LabDCT/Spacing').*1000;
+%Compares the grain statistics between 3 samples (could be same)
+%Input gid_map, voxel_size
+%Output figures & graph
+
+gid_map1 = h5read('Example_1.h5','/LabDCT/Data/GrainId');
+gid_map2 = h5read('Example_2.h5','/LabDCT/Data/GrainId');
+gid_map3 = h5read('Example_3.h5','/LabDCT/Data/GrainId');
+voxel_size1 = h5read('Example_1.h5','/LabDCT/Spacing').*1000;
+voxel_size2 = h5read('Example_2.h5','/LabDCT/Spacing').*1000;
+voxel_size3 = h5read('Example_3.h5','/LabDCT/Spacing').*1000;
 
 [~, Vol1, numNeighbor1, ~, ~] = gidMap_123(gid_map1,[],voxel_size1);
 [~, Vol1e, numNeighbor1e, ~, ~] = gidMap_123_ext(gid_map1,[],voxel_size1);

@@ -1,11 +1,11 @@
-%This script calculates grain velocity between two DCT images
+%This script calculates grain volume velocity between two DCT images
 %Preface
     %Read in Grain Id Map, rodrigues Vector, comp, and voxel size
-        gid_map1 = h5read('UMich_AlCu_GG.h5','/LabDCT/Data/GrainId');
-        gid_map2 = h5read('UMich_AlCu_GG3.h5','/LabDCT/Data/GrainId');
-        rodV1 = h5read('UMich_AlCu_GG.h5','/LabDCT/Data/Rodrigues');
-        rodV2 = h5read('UMich_AlCu_GG2.h5','/LabDCT/Data/Rodrigues');
-        voxel1 = h5read('UMich_AlCu_GG.h5','/LabDCT/Spacing').*1000;
+        gid_map1 = h5read('Example_1.h5','/LabDCT/Data/GrainId');
+        gid_map2 = h5read('Example_2.h5','/LabDCT/Data/GrainId');
+        rodV1 = h5read('Example_1.h5','/LabDCT/Data/Rodrigues');
+        rodV2 = h5read('Example_2.h5','/LabDCT/Data/Rodrigues');
+        voxel1 = h5read('Example_1.h5','/LabDCT/Spacing').*1000;
         
         size_gm1 = size(gid_map1);
         size_gm2 = size(gid_map2);

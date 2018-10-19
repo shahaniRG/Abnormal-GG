@@ -7,9 +7,9 @@
 %Show what .h5 contains
     %h5disp('UMich_AlCu_GG.h5')
 %Read in Rod Vector, Voxel Size, and Completeness
-        rodV = h5read('UMich_AlCu_GG.h5','/LabDCT/Data/Rodrigues');
-        voxel_size = h5read('UMich_AlCu_GG.h5','/LabDCT/Spacing').*1000;
-        comp = double(h5read('UMich_AlCu_GG.h5','/LabDCT/Data/Completeness'));
+        rodV = h5read('Example_1.h5','/LabDCT/Data/Rodrigues');
+        voxel_size = h5read('Example_1.h5','/LabDCT/Spacing').*1000;
+        comp = double(h5read('Example_1.h5','/LabDCT/Data/Completeness'));
 
 %(1) Volume per Grain
     %Remove grains that have less than min grain voxel & not in unique_gid
