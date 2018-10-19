@@ -2,8 +2,15 @@
 # MTEX is a required Dependency for the code
     download and initialize MTEX (https://mtex-toolbox.github.io, once downloaded type startup_mtex)
 # It is organized by 4 folders: 1) Input [Examples] 2) Functions, 3) Programs 4) Misc [Work in Progress]
+  #Hierarchy of Utilization: What order to run programs/func as well as what the 
+    1. Al_Cu_Clean_Up <=> gidMap_123 <=> gidMap_123_ext <=> grain_velocity
+    2. Al_Cu_1_2_3
+    3. 
+    1-2. gidMap_123, gidMap_123_ext 
+    1-3.
+    N/A. 
   # 1) Input (Examples)
-    Example_1 =>
+    Example_1.h5
   # 2) Functions
     align_gid_map => input two 3D gid maps, output a 3D gid map that is aligned both in center and rotation to the other (need to locate a straight edge)
     avg_sn => input number of neighbors for each grain & total number of shell grain neighbors for each grain, output avg shell grain neighbor for each unique number of shell neighbors
