@@ -7,7 +7,7 @@
     1. Al_Cu_Clean_Up
     2. Al_Cu_1_2_3
     3. Dist_of_AlCu
-    1-2. gidMap_123, gidMap_123_ext 
+    1-2. h5CUwE_V_N, h5CU_V_N 
     1-3. grain_velocity, Grain_Velocity
     N/A. gid_rodV, imRAG, rot_gid_map, str_edge, gb_calc, avg_sn, align_gid_map
   # 1) Input (Examples)
@@ -16,9 +16,9 @@
   # 2) Functions
     align_gid_map => input two 3D gid maps, output a 3D gid map that is aligned both in center and rotation to the other (need to locate a straight edge)
     avg_sn => input number of neighbors for each grain & total number of shell grain neighbors for each grain, output avg shell grain neighbor for each unique number of shell neighbors
-    gidMap_123 => input 3D gid map & minimum voxel size, output cleaned up gid map without exterior grains
-    gidMap_123_ext => input 3D gid map & minimum voxel size, output cleaned up gid map with exterior grains
-    gid_rodV => input rod vec & unique gid & 3D gid map, output rod vec & center of mass coord for each grain
+    h5CU_V_N => input h5file & minimum voxel size, output cleaned up gid map without exterior grains
+    h5CUwE_V_N => input h5file & minimum voxel size, output cleaned up gid map with exterior grains
+    gid_rodV => input h5file & unique gid & 3D gid map, output rod vec & center of mass coord for each grain
     grain_velocity => input two 3D gid map with rod vec & comp & voxel limit & time change, output grain match & velocity
     imRAG => input 3D gid map, output adjacency matrix (grains that are neighbors)
     rot_gid_map => input degrees of rotation and 3D gid map, output of specified rotation degrees

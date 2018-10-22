@@ -1,8 +1,8 @@
-function [RodV, coords] = gid_rodV(rodV, unique_gid, gid_map)
+function [RodV, coords] = gid_rodV(h5file, unique_gid, gid_map)
 %gid_rodV gives a single rodrigues vector that respresents each grain
-%   Input: rodV, unique_gid, gid_map, comp
+%   Input: h5file, unique_gid, gid_map, comp
 %   Output: RodV, coords, comp_mean
-
+rodV = h5read(h5file,'/LabDCT/Data/Rodrigues');
 coords = zeros(max(unique_gid),3);
 RodV = coords;
 for i = unique_gid'
