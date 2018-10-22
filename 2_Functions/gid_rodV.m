@@ -14,6 +14,5 @@ for i = unique_gid'
 end
 coords = coords(any(coords,2),:);
 RodV = RodV(any(RodV,2),:);
-
 end
 

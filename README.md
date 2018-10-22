@@ -16,8 +16,10 @@
   # 2) Functions
     align_gid_map => input two 3D gid maps, output a 3D gid map that is aligned both in center and rotation to the other (need to locate a straight edge)
     avg_sn => input number of neighbors for each grain & total number of shell grain neighbors for each grain, output avg shell grain neighbor for each unique number of shell neighbors
-    h5CU_V_N => input h5file & minimum voxel size, output cleaned up gid map without exterior grains
-    h5CUwE_V_N => input h5file & minimum voxel size, output cleaned up gid map with exterior grains
+    h5CUrE => input h5file & minimum voxel size, output cleaned up gid map removing exterior grains
+    h5CU => input h5file & minimum voxel size, output cleaned up gid map keeping exterior grains
+    h5CUrE_V_N => input h5file & minimum voxel size, output cleaned up gid map removing exterior grains & Volume & Number of Neighbors
+    h5CU_V_N => input h5file & minimum voxel size, output cleaned up gid map keeping exterior grains & Volume & Number of Neighbors
     gid_rodV => input h5file & unique gid & 3D gid map, output rod vec & center of mass coord for each grain
     grain_velocity => input two 3D gid map with rod vec & comp & voxel limit & time change, output grain match & velocity
     imRAG => input 3D gid map, output adjacency matrix (grains that are neighbors)

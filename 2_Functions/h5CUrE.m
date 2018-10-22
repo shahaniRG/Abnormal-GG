@@ -1,4 +1,4 @@
-function [gid_map,adj,numElement,unique_gid] = h5CleanUp(h5file,ming_thresh)
+function [gid_map,adj,numElement,unique_gid] = h5CUrE(h5file,ming_thresh)
 %Function to remove unwanted grains (exterior and min threshold)
 %Input: h5file from 3D XRD, minimum threshold for grain size
 %Output: gid_map, adj, numElement, unique_gid
@@ -12,7 +12,6 @@ gid_map = h5read(h5file,'/LabDCT/Data/GrainId');
         ext_gid1 = adjx(a);
         gid_map = gid_map - 1;
         gid_map(ismember(gid_map, ext_gid1 - 1)) = 0;
-
     %Remove grains that touch top and bottom face
         z_faces = gid_map(:,:,[1 end]);
         z_faces(z_faces == 0) = [];

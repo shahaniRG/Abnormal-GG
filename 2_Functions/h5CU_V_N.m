@@ -1,26 +1,12 @@
 function [gid_map, Vol, numNeighbor, numElement, unique_gid] = h5CU_V_N(h5file,ming_thresh)
-%gidMap_cleanUp removes the exterior grains of the DCT image
+%This function keeps the exterior grains of the DCT image
 %It returns the volume, number of Neighbors, number of Elements, and the
 %unique_gid
 %   Input: h5file, minimum threshold of grain size
 %   Output: gid_map, Vol, numNeighbor, numElement, unique_gid
-%   Removes exterior grains  
     voxel_size = h5read(h5file,'/LabDCT/Spacing').*1000;
     gid_map = h5read(h5file,'/LabDCT/Data/GrainId');
 %Clean Up
-    %Remove grains that touch empty space
-        gid_map = gid_map + 1;
-        adj = imRAG(gid_map);
-        a = adj == 1;
-        a = a(:,1) == 1 | a(:,2) == 1;
-        ext_gid1 = adj(a);
-        gid_map = gid_map - 1;
-        gid_map(ismember(gid_map, ext_gid1 - 1)) = 0;    
-    %Remove grains that touch top and bottom face
-        z_faces = gid_map(:,:,[1 end]);
-        z_faces(z_faces == 0) = [];
-        ext_gid2 = unique(z_faces);
-        gid_map(ismember(gid_map, ext_gid2)) = 0;
     %Remove grains that have less than min grain voxel
         gid_mask = gid_map;
         gid_mask(gid_map == 0) = [];
@@ -37,7 +23,7 @@ function [gid_map, Vol, numNeighbor, numElement, unique_gid] = h5CU_V_N(h5file,m
         
 %Volume per Grain
     %Remove grains that have less than min grain voxel & not in unique_gid
-        numElement(numElement(:,2) < grain_size_mini,:) = [];
+        numElement(numElement(:,2) < ming_thresh,:) = [];
         numElement(~ismember(numElement(:,1),unique_gid),:) = [];
     %Calculate volume
         Vol = numElement(:,2)*voxel_size(1)*voxel_size(2)*voxel_size(3);
