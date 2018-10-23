@@ -12,7 +12,7 @@ for i = unique_gid'
     RodV(i,2) = rodV(2,coords(i,1),coords(i,2),coords(i,3));
     RodV(i,3) = rodV(3,coords(i,1),coords(i,2),coords(i,3));
 end
-coords = coords(any(coords,2),:);
-RodV = RodV(any(RodV,2),:);
+%coords = coords(any(coords,2),:);
+%RodV = RodV(any(RodV,2),:);
 end
 
