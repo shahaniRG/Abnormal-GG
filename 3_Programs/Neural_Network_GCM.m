@@ -1,5 +1,5 @@
-[gid_map, adj, numElement, unique_gid] = h5CU('Al-Cu_400.h5',10);
-[RodV,coords] = gid_rodV('Al-Cu_400.h5', unique_gid, gid_map);
+[gid_map, adj, numElement, unique_gid] = h5CU('Al35Cu_T5.h5',10);
+[RodV,coords] = gid_rodV('Al35Cu_T5.h5', unique_gid, gid_map);
 %Calculate misorientation
     cs = crystalSymmetry('cubic');
     misori = zeros(length(adj),1);
@@ -25,10 +25,13 @@ hold all
 for i = 1:size(adj,1)
     line = [coords(adj(i,2),:); coords(adj(i,1),:)];
     if misori(i) > 15
-    colorid = [(0.25+0.75*misori(i)/mx) 0 0];
+    colorid = [(0.5+0.5*(misori(i)/mx)) 0 0];
     else
-    colorid = [0 0 (0.25+0.75*(misori(i)/15))];
+    colorid = [0 0 (0.5+0.5*(misori(i)/15))];
     end
     plot3(line(:,1),line(:,2),line(:,3),'Color',colorid)
 end
+s = numElement(unique_gid);
+scatter3(coords(unique_gid,1),coords(unique_gid,2),coords(unique_gid,3),s,'filled')
+
 %colorbar([0 0 1],[1 0 0])
