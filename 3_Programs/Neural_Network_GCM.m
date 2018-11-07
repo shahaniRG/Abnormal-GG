@@ -20,7 +20,7 @@ mx = 62.8;
     %red is above 15 degrees and close to max 
     %blue is below 15 degrees and close to 0
     fprintf('Finished Calculating Misorientation\n')
-    %%
+    
 hold all
 for i = 1:size(adj,1)
     line = [coords(adj(i,2),:); coords(adj(i,1),:)];
@@ -32,6 +32,8 @@ for i = 1:size(adj,1)
     plot3(line(:,1),line(:,2),line(:,3),'Color',colorid)
 end
 s = numElement(unique_gid);
-scatter3(coords(unique_gid,1),coords(unique_gid,2),coords(unique_gid,3),s,'filled')
-
-%colorbar([0 0 1],[1 0 0])
+sd = std(s);
+mn = mean(s);
+s = 30+ 15.*((numElement(unique_gid) - mn)./sd);
+scatter3(coords(unique_gid,1),coords(unique_gid,2),...
+    coords(unique_gid,3),s,'g','filled','MarkerEdgeColor','k')
